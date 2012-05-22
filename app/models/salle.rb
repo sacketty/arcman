@@ -1,0 +1,2 @@
+class Salle < Position
+end
