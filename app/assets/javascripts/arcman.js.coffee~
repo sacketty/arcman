@@ -3,9 +3,7 @@ window.Arcman =
   Collections: {}
   Views: {}
   Routers: {}
-  init: ->
-    new  Arcman.Routers.Documents()
-    Backbone.history.start()
+  init: -> alert 'Hello from Backbone!'
 
 $(document).ready ->
   Arcman.init()

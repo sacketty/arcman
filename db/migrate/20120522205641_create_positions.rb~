@@ -5,6 +5,6 @@ class CreatePositions < ActiveRecord::Migration
       t.string :type
       t.references :emplacement
     end
-    add_index(:positions, [:emplacement_id], :unique=>true)
+    add_index(:positions, [:emplacement_id, :emplacement_type], :unique=>true)
   end
 end

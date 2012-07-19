@@ -11,17 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120522211017) do
+ActiveRecord::Schema.define(:version => 20120719143710) do
 
   create_table "documents", :force => true do |t|
+    t.string   "title"
     t.string   "descriptif"
     t.date     "date"
     t.string   "url"
-    t.string   "position_type"
-    t.integer  "position_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  create_table "documents_dossiers", :id => false, :force => true do |t|
+    t.integer "document_id", :null => false
+    t.integer "dossier_id",  :null => false
+  end
+
+  add_index "documents_dossiers", ["dossier_id", "document_id"], :name => "index_documents_dossiers_on_dossier_id_and_document_id", :unique => true
 
   create_table "documents_tags", :id => false, :force => true do |t|
     t.integer "document_id", :null => false
@@ -38,18 +44,15 @@ ActiveRecord::Schema.define(:version => 20120522211017) do
   add_index "dossiers_tags", ["dossier_id", "tag_id"], :name => "index_dossiers_tags_on_dossier_id_and_tag_id", :unique => true
 
   create_table "positions", :force => true do |t|
-    t.string   "description"
-    t.string   "type"
-    t.string   "emplacement_type"
-    t.integer  "emplacement_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string  "description"
+    t.string  "type"
+    t.integer "emplacement_id"
   end
 
+  add_index "positions", ["emplacement_id"], :name => "index_positions_on_emplacement_id", :unique => true
+
   create_table "tags", :force => true do |t|
-    t.string   "nom"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string "nom"
   end
 
 end

@@ -1,0 +1,6 @@
+class Arcman.Models.Document extends Backbone.Model
+  routes:
+    '': 'index'
+
+  index:
+    alert "Home page..."

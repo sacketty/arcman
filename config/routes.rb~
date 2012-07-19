@@ -1,6 +1,6 @@
 Arcman::Application.routes.draw do
 
-  scope "api" do
+  scope: "api" do
     resources :positions
     resources :documents
   end

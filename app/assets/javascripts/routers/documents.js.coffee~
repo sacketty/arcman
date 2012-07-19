@@ -3,8 +3,8 @@ class Arcman.Routers.Documents extends Backbone.Router
     '': 'index'
     'upload': 'upload'
 
-  index: ->
+  index:
     alert "Home page..."
 
-  upload: ->
+  upload:
     alert "Here we upload the document"
