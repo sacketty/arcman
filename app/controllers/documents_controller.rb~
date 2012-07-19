@@ -1,5 +1,4 @@
 class DocumentsController < ApplicationController
-  respond_to :json
   # GET /documents
   # GET /documents.json
   def index
