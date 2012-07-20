@@ -3,8 +3,13 @@ class Arcman.Routers.Documents extends Backbone.Router
     '': 'index'
     'upload': 'upload'
 
+  showView: (klass) ->
+    view = new klass()
+    $('#container').html(view.render().el)
+
   index: ->
-    alert "Home page..."
+    @showView Arcman.Views.DocumentsIndex
 
   upload: ->
-    alert "Here we upload the document"
+    @showView Arcman.Views.DocumentsUpload
+

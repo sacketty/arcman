@@ -11,7 +11,6 @@ gem 'thin'
 gem 'kaminari'
 gem 'prawn'
 gem 'carrierwave'
-gem 'rmagick'
 gem 'fog', '~> 1.4.0'
 gem 'backbone-on-rails'
 

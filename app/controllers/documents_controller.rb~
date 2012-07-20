@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   respond_to :json
+
   def index
     respond_with Document.all
   end
@@ -8,15 +9,8 @@ class DocumentsController < ApplicationController
     respond_with Document.find(params[:id])
   end
 
-  def new
-    respond_with Document.new
-  end
-
-  def edit
-    respond_with Document.find(params[:id])
-  end
-
   def create
+    raise params.inspect
     respond_with Document.create(params[:document])
   end
 

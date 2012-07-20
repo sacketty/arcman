@@ -7,7 +7,7 @@
     $('#file_upload').uploadify({
         'swf'      : '/assets/uploadify/uploadify.swf',
 //        'checkExisting' : '/exists/photos',
-        'uploader' : '/api/documents',
+        'uploader' : '/documents',
         // Your options here
         'method'   : 'post',
 //        'formData' : upload_params

@@ -2,9 +2,19 @@ class Arcman.Routers.Documents extends Backbone.Router
   routes:
     '': 'index'
     'upload': 'upload'
+    '*path':  'defaultRoute'
 
-  index:
-    alert "Home page..."
+  showView: (klass) ->
+    view = new klass()
+    $('#container').html(view.render().el)
 
-  upload:
-    alert "Here we upload the document"
+  index: ->
+    @showView Arcman.Views.DocumentsIndex
+
+  upload: ->
+    @showView Arcman.Views.DocumentsUpload
+
+  defaultRoute: (p1,p2,p3) ->
+    debugger
+    console.log "In default route"
+
