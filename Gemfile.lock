@@ -285,7 +285,7 @@ DEPENDENCIES
   mongoid
   prawn
   rails (= 3.2.3)
-  rb-inotify
+  rb-fsevent
   rspec-rails (= 2.9.0)
   s3_swf_upload!
   sass-rails (~> 3.2.3)

@@ -1,5 +1,0 @@
-class Position
-  include Mongoid::Document
-  field :description, type: String
-  has_many :dossiers
-end

@@ -11,9 +11,18 @@ class DocumentsController < ApplicationController
 
   def create
     @doc = Document.new
-    @doc[:original_filename] = params["Filename"]
+    @doc.title = "#{Indexer.next_value}_#{params['Filename']}" 
+    @doc.file_doc = params['Filedata']       
 #    respond_with Document.create(params[:document])
-    respond_with @doc.save
+    respond_to do |format|
+      if @doc.save
+        format.html { render text: "doc  was successfully created." }
+        format.json { render json: @doc, status: :created, location: @doc }
+      else
+        format.html { render text: "doc  was not successfully created." }
+        format.json { render json: @doc.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
