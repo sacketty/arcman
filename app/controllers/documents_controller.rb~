@@ -10,8 +10,10 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    raise params.inspect
-    respond_with Document.create(params[:document])
+    @doc = Document.new
+    @doc[:original_filename] = params["Filename"]
+#    respond_with Document.create(params[:document])
+    respond_with Document.save
   end
 
   def update

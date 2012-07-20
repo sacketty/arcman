@@ -1,5 +1,10 @@
-class Document < ActiveRecord::Base
-  attr_accessible :date, :descriptif, :position, :url
+class Document
+  include Mongoid::Document
+  field :title, type: String
+  field :descriptif, type: String
+  field :date, type: String
+  field :file_doc, type: String
+  mount_uploader :file_doc, FileDocUploader
   has_and_belongs_to_many :dossiers
   has_and_belongs_to_many :tags
 end

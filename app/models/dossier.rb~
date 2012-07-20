@@ -1,5 +1,5 @@
-class Salle
+class Dossier
   include Mongoid::Document
   field :name, type: String
-  has_many :emplacements
+  has_and_belongs_to_many :documents
 end

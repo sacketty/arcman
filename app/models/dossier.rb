@@ -1,4 +1,6 @@
-class Dossier < Position
-  belongs_to :position, :foreign_key=>:emplacement_id, :polymorphic=> true
-  has_and_belongs_to_many :tags
+class Dossier
+  include Mongoid::Document
+  field :name, type: String
+  has_and_belongs_to_many :documents
+  belongs_to :position
 end
