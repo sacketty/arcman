@@ -15,12 +15,35 @@
   });
 </script>
 <div class="span9 columns">
-<h2><%= "Documents archivés" %></h2>
-<form id="doc-send-form">
-  <input type="file" name="file_upload" id="file_upload"/>
-</form>
+  <h2><%= "Documents à identifier" %></h2>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= "Nom du fichier" %></th>
+      <th><%= "Actions" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for doc in @documents.models: %>
+      <tr>
+        <td><%= doc.get('title') %></td>
+        <td>
+          <a href="/songs/101/edit" class="btn btn-mini"><span class="translation_missing" title="translation missing: en.helpers.links.edit">Edit</span></a>
+          <a href="/songs/101" class="btn btn-mini btn-danger" data-confirm="Are you sure?" data-method="delete" rel="nofollow"><span class="translation_missing" title="translation missing: en.helpers.links.destroy">Destroy</span></a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
 </div>
-<div class="span9 columns">
-  <span class="label label-info">attention!</span>
-  <%= "Un fichier ne pourra pas être uploadé si son nom figure déjà dans notre base de données" %>
+  <ul>
+    <% for doc in @documents.models: %>
+      <li><%= doc.get('title') %></li>
+    <% end %>
+  </ul>
+  <hr/>
+  <form id="doc-send-form">
+    <input type="file" name="file_upload" id="file_upload"/>
+  </form>
 </div>
+
