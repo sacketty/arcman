@@ -11,7 +11,7 @@ class DocumentsController < ApplicationController
 
   def create
     @doc = Document.new
-    @doc.title = "#{Indexer.next_value}_#{params['Filename']}" 
+    @doc.title = params['Filename']
     @doc.file_doc = params['Filedata']       
 #    respond_with Document.create(params[:document])
     respond_to do |format|

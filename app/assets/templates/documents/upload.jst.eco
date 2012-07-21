@@ -15,7 +15,7 @@
   });
 </script>
 <div class="span9 columns">
-<h2>Archiver des documents</h2>
+<h2><%= "Documents archivés" %></h2>
 <form id="doc-send-form">
   <input type="file" name="file_upload" id="file_upload"/>
 </form>

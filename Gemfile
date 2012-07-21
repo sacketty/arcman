@@ -1,20 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'sqlite3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mongoid'
-gem 'bson_ext'
-gem 'aws-s3'
+gem 'mongoid', '~> 2.4'
+gem 'bson_ext', '~> 1.5'
 gem 'thin'
 gem 'kaminari'
 gem 'prawn'
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem 'fog', '~> 1.4.0'
 gem 'backbone-on-rails'
 
 
@@ -49,5 +46,4 @@ end
 
 gem 'jquery-rails'
 
-gem 's3_swf_upload', :git => 'git://github.com/nathancolgate/s3-swf-upload-plugin'
 gem 'faker', :group=>[:development, :test]

@@ -5,6 +5,8 @@ Arcman::Application.routes.draw do
     resources :documents
   end
 
+  match "/images/uploads/*path" => "gridfs#serve"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
