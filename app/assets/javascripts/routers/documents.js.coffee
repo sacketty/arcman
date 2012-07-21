@@ -1,7 +1,8 @@
 class Arcman.Routers.Documents extends Backbone.Router
   routes:
     '': 'index'
-    'upload': 'upload'
+    'upload': 'upload' 
+    'documents/:id': 'showDoc'
 
   showView: (klass, coll) ->
     view = new klass(collection: coll)
@@ -13,5 +14,8 @@ class Arcman.Routers.Documents extends Backbone.Router
   upload: ->
     collection = new Arcman.Collections.Documents()
     collection.fetch()
-    @showView Arcman.Views.DocumentsUpload, collection
+    @showView Arcman.Views.DocumentsUpload, collection 
+
+  showDoc: (id)->
+    alert "Should show #{id} document here..."
 

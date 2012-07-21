@@ -15,7 +15,7 @@ class DocumentsController < ApplicationController
     @doc.file_doc = params['Filedata']       
 #    respond_with Document.create(params[:document])
     respond_to do |format|
-      if @doc.save
+      if @doc.save!
         format.html { render text: "doc  was successfully created." }
         format.json { render json: @doc, status: :created, location: @doc }
       else
@@ -30,6 +30,6 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
-    respond_with Document.destroy(params[:id])
+    respond_with Document.find(params[:id]).destroy
   end
 end

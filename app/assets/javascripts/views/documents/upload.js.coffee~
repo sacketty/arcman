@@ -1,3 +1,0 @@
-class Arcman.Views.DocumentsUpload extends Backbone.View
-
-  template: JST['documents/upload']

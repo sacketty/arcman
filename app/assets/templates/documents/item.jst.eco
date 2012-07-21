@@ -1,0 +1,6 @@
+<td><a href="<%= @file_doc.url %>"><%= @title %></a></td>
+<td><%= "nom - prénom" %></td>
+<td>
+  <a href="#" class="btn btn-primary edit">Edit</a>
+  <a href="#" class="btn btn-danger delete">Supprimer</a>
+</td>

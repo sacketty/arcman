@@ -8,8 +8,14 @@ window.Arcman =
     Backbone.history.start()
 
 $(document).ready ->
-  Arcman.init()
+  Arcman.init()  
 
+window.isPDF= (url) ->
+  res = false
+  if url
+    idx = url.lastIndexOf(".")
+    res = url.substr(idx,4).toLowerCase() == ".pdf"
+  res
     
 window.changePage= (page, dr) ->
   dr ?= 'page'
@@ -26,3 +32,5 @@ window.changePage= (page, dr) ->
     changeHash : false,
     transition : transition
   })
+
+
