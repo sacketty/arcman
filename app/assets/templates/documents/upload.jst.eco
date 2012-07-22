@@ -6,8 +6,10 @@
     };
     $('#file_upload').uploadify({
         'swf'      : '/assets/uploadify/uploadify.swf',
-//        'checkExisting' : '/exists/photos',
         'uploader' : '/api/documents',
+        'onUploadSuccess' : function(file, data, response) {
+            this.button.trigger('uploadSuccess');
+        },
         // Your options here
         'method'   : 'post',
 //        'formData' : upload_params

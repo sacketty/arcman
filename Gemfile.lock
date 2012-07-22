@@ -170,7 +170,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
-    rmagick (2.13.1)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
       rspec-expectations (~> 2.9.0)
@@ -255,7 +254,6 @@ DEPENDENCIES
   prawn
   rails (= 3.2.3)
   rb-fsevent
-  rmagick
   rspec-rails (= 2.9.0)
   sass-rails (~> 3.2.3)
   shoulda

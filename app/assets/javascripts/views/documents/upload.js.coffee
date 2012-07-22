@@ -2,10 +2,16 @@ class Arcman.Views.DocumentsUpload extends Backbone.View
 
   template: JST['documents/upload'] 
 
-  element: "#thumb-docs"
+  element: "#thumb-docs"   
+
+  events:
+    'uploadSuccess': 'uploadSuccess'
 
   initialize: ->
     @collection.on('reset', @render, this)
+
+  uploadSuccess: (event) ->
+    @collection.fetch() 
 
   render: ->
     $(@el).html(@template()) 
